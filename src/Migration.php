@@ -68,6 +68,14 @@ class Migration extends AbstractMigration {
     );
     $this->schema->addRow(
       "email_templates",
+      ["name" => "Login Link"],
+      [
+        "subject" => "Log in to [site:name]",
+        "body" => '<p>Click the link below to sign in. This link expires in 15 minutes.<br/><br/><a href="[user:login-link]">[user:login-link]</a></p>'
+      ]
+    );
+    $this->schema->addRow(
+      "email_templates",
       ["name" => "Registration"],
       [
         "subject" => "Welcome to [site:name]!",
